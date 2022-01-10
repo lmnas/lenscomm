@@ -21,6 +21,10 @@ export async function getCategory(slug) {
   const categories = await fetchAPI(`/categories?slug=${slug}`);
   return categories?.[0];
 }
+export async function getTag(slug) {
+  const tags = await fetchAPI(`/tags?slug=${slug}`);
+  return tags?.[0];
+}
 
 export async function getProducts() {
   const products = await fetchAPI("/products");
