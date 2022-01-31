@@ -27,4 +27,7 @@ afterAll(async () => {
 it('strapi is defined', () => {
   expect(strapi).toBeDefined();
 });
+//Test scripts of User
 require('./user');
+//Test Scripts of Products
+require('./products');

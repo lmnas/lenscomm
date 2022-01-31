@@ -48,7 +48,6 @@ it('should return users data for authenticated user', async () => {
   const jwt = strapi.plugins['users-permissions'].services.jwt.issue({
     id: user.id,
   });
-  jest.setTimeout(15000)
   await request(strapi.server) // app server is an instance of Class: http.Server
     .get('/users/me')
     .set('accept', 'application/json')
