@@ -16,7 +16,6 @@ it('should return product basic data and slug', async () => {
     const product = await strapi.services.product.create({
         ...mockProductData
     })
-    console.log(product)
     await request(strapi.server) // app server is an instance of Class: http.Server
         .get('/products/unit-test-product')
         .set('accept', 'application/json')
