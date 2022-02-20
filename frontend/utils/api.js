@@ -11,6 +11,19 @@ export async function fetchAPI(path) {
   const data = await response.json();
   return data;
 }
+// Helper to make POST requests to Strapi
+export async function postAPI(path, requestData) {
+  const requestUrl = getStrapiURL(path);
+  const response = await fetch(requestUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(requestData),
+  })
+  const data = await response.json();
+  return data;
+}
 
 export async function getCategories() {
   const categories = await fetchAPI("/categories");
@@ -34,4 +47,9 @@ export async function getProducts() {
 export async function getProduct(slug) {
   const products = await fetchAPI(`/products?slug=${slug}`);
   return products?.[0];
+}
+
+
+export async function registerUser(){
+
 }
